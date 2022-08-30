@@ -1,6 +1,6 @@
 """EX01 - Chardle - A cute step toward Wordle."""
 
-_author_ = "730573475"
+__author__ = "730573475"
 
 word: str = input("Enter a 5-character word: ")
 character: str = input("Enter a single character: ")
