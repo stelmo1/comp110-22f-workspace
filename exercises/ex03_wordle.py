@@ -1,6 +1,7 @@
 """Structured wordle."""
 
-__author__ = 730573475
+__author__: str = "730573475"
+
 
 def contains_char(word: str, char: str) -> bool:
     """Checks to see if word contains specific character."""
@@ -14,15 +15,17 @@ def contains_char(word: str, char: str) -> bool:
         i += 1
     return False
 
+
 # The emojis
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
+
 def emojified(guess: str, secret: str) -> str:
     """To assign an emoji for each character of the guess."""
     assert len(guess) == len(secret)
-    i: str = 0
+    i: int = 0
     result: str = ""
     while len(secret) > i:
         if guess[i] == secret[i]:
@@ -34,12 +37,14 @@ def emojified(guess: str, secret: str) -> str:
         i += 1
     return result
 
+
 def input_guess(length: int) -> str:
     """Makes sure user's input is valid."""
     guess: str = input(f"Enter a {length} character word: ")
     while len(guess) != length:
         guess = input(f"That wasn't {length} chars! Try again: ")
     return guess
+
 
 def main() -> None:
     """The entrypoint of the program."""
@@ -57,6 +62,7 @@ def main() -> None:
             turn += 1
     if turn == 7:
         print("X/6 - Sorry, try again tomorrow!")
+
 
 if __name__ == "__main__":
     main()
